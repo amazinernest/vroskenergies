@@ -69,30 +69,31 @@ const coreValues = [
     <div class="container">
       <div style="display: flex; flex-direction: column; gap: 28px;">
         {coreValues.map((val, index) => (
-          <div class={`bento-card ${index % 2 === 1 ? 'bento-card-dark' : ''}`} style="padding: 36px 44px; display: flex; flex-direction: row; align-items: center; justify-content: space-between; gap: 36px; flex-wrap: wrap;">
-            <!-- Letter Monogram Badge -->
-            <div style="display: flex; align-items: center; gap: 24px;">
-              <div style={`width: 72px; height: 72px; border-radius: var(--radius-lg); display: flex; align-items: center; justify-content: center; font-family: var(--font-heading); font-size: 2.25rem; font-weight: 700; ${index % 2 === 1 ? 'background: var(--theme-color-01); color: var(--neutral-04);' : 'background: var(--neutral-04); color: #ffffff;'}`}>
+          <div class={`bento-card value-item-card ${index % 2 === 1 ? 'bento-card-dark' : ''}`}>
+            <!-- Letter Monogram Badge & Title -->
+            <div class="value-item-header">
+              <div style={`width: 64px; height: 64px; flex-shrink: 0; border-radius: var(--radius-lg); display: flex; align-items: center; justify-content: center; font-family: var(--font-heading); font-size: 2rem; font-weight: 700; ${index % 2 === 1 ? 'background: var(--theme-color-01); color: var(--neutral-04);' : 'background: var(--neutral-04); color: #ffffff;'}`}>
                 {val.letter}
               </div>
-              <div>
+              <div style="min-width: 0;">
                 <span class="mono-tag" style={index % 2 === 1 ? 'color: var(--theme-color-01);' : 'color: #0d7543;'}>
                   {val.subtitle}
                 </span>
-                <h2 class="heading-2" style={`font-size: 1.85rem; margin-top: 4px; ${index % 2 === 1 ? 'color: #ffffff;' : ''}`}>
+                <h2 class="heading-2" style={`font-size: 1.75rem; margin-top: 4px; line-height: 1.25; ${index % 2 === 1 ? 'color: #ffffff;' : ''}`}>
                   {val.title}
                 </h2>
               </div>
             </div>
 
             <!-- Description -->
-            <div style="flex: 1; min-width: 300px; max-width: 640px;">
-              <p style={`font-size: 0.95rem; line-height: 1.65; ${index % 2 === 1 ? 'color: #c4bfbf;' : 'color: var(--neutral-03);'}`}>
+            <div class="value-item-desc">
+              <p style={`font-size: 0.95rem; line-height: 1.65; margin: 0; ${index % 2 === 1 ? 'color: #c4bfbf;' : 'color: var(--neutral-03);'}`}>
                 {val.description}
               </p>
             </div>
 
-            <div style="font-size: 2rem;" aria-hidden="true">
+            <!-- Icon -->
+            <div class="value-item-icon" style="font-size: 2rem; flex-shrink: 0;" aria-hidden="true">
               {val.icon}
             </div>
           </div>

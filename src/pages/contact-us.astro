@@ -40,7 +40,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
           </p>
 
           <form id="contactForm" style="display: flex; flex-direction: column; gap: 20px;">
-            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
+            <div class="grid-cols-2-responsive">
               <div>
                 <label for="fullName" style="display: block; font-size: 0.8125rem; font-family: var(--font-mono); text-transform: uppercase; margin-bottom: 6px; color: var(--neutral-04);">
                   Full Name *
@@ -70,7 +70,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
               </div>
             </div>
 
-            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
+            <div class="grid-cols-2-responsive">
               <div>
                 <label for="company" style="display: block; font-size: 0.8125rem; font-family: var(--font-mono); text-transform: uppercase; margin-bottom: 6px; color: var(--neutral-04);">
                   Company / Institution *

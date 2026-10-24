@@ -32,11 +32,11 @@ const displayServices = servicesData.slice(0, limit);
       {displayServices.map((service, index) => (
         <div class="bento-card" style={`display: flex; flex-direction: column; justify-content: space-between; ${index === 0 || index === 4 ? 'background: #fdfdfd;' : ''}`}>
           <div>
-            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
-              <span class="mono-tag" style="color: #0b4026; background: rgba(77,255,176,0.14); padding: 4px 10px; border-radius: var(--radius-full);">
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 10px; margin-bottom: 20px;">
+              <span class="mono-tag" style="color: #0b4026; background: rgba(77,255,176,0.14); padding: 4px 10px; border-radius: var(--radius-full); line-height: 1.4; display: inline-block;">
                 {service.tag}
               </span>
-              <span style="font-size: 1.5rem;" aria-hidden="true">{service.icon}</span>
+              <span style="font-size: 1.5rem; flex-shrink: 0;" aria-hidden="true">{service.icon}</span>
             </div>
 
             <h3 class="heading-3" style="font-size: 1.25rem; margin-bottom: 12px; line-height: 1.3;">

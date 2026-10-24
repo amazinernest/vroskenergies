@@ -23,7 +23,7 @@ import { roadmapData } from '../data/roadmap';
         <div class="bento-card-dark" style={`border-color: ${stage.status === 'active' ? 'var(--theme-color-01)' : 'var(--dark-border)'};`}>
           <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 16px; margin-bottom: 24px;">
             <div>
-              <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 8px;">
+              <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 8px; flex-wrap: wrap;">
                 <span style="font-family: var(--font-mono); font-size: 0.8125rem; color: var(--theme-color-01); text-transform: uppercase; letter-spacing: 0.08em;">
                   {stage.stage}
                 </span>
@@ -31,7 +31,7 @@ import { roadmapData } from '../data/roadmap';
                   {stage.status === 'active' ? '● Currently Active' : stage.status === 'in-progress' ? '◐ In Progress' : '○ Long-Term Horizon'}
                 </span>
               </div>
-              <h3 class="heading-3" style="color: #ffffff;">
+              <h3 class="heading-3" style="color: #ffffff; font-size: clamp(1.35rem, 2.4vw, 1.85rem); line-height: 1.25;">
                 {stage.title}
               </h3>
             </div>
@@ -45,7 +45,7 @@ import { roadmapData } from '../data/roadmap';
             {stage.description}
           </p>
 
-          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 18px; padding-top: 24px; border-top: 1px solid rgba(255,255,255,0.1);">
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr)); gap: 18px; padding-top: 24px; border-top: 1px solid rgba(255,255,255,0.1);">
             {stage.items.map((item) => (
               <div style="background: rgba(255,255,255,0.03); padding: 18px; border-radius: var(--radius-md); border: 1px solid rgba(255,255,255,0.06);">
                 <div style="font-size: 0.875rem; color: #d6d3d3; line-height: 1.6;">

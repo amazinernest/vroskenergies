@@ -32,10 +32,10 @@ import { servicesData } from '../data/services';
     <div class="container">
       <div style="display: flex; flex-direction: column; gap: 40px;">
         {servicesData.map((service, index) => (
-          <div class="bento-card" id={service.id} style={`padding: 44px; ${index % 2 === 1 ? 'background: #ffffff;' : 'background: #fafafa;'}`}>
+          <div class="bento-card" id={service.id} style={`padding: clamp(24px, 4vw, 40px); ${index % 2 === 1 ? 'background: #ffffff;' : 'background: #fafafa;'}`}>
             <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 16px; margin-bottom: 20px;">
               <div>
-                <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 8px;">
+                <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 8px; flex-wrap: wrap;">
                   <span class="mono-tag" style="color: #0b4026; background: rgba(77,255,176,0.18); padding: 4px 12px; border-radius: var(--radius-full);">
                     {service.tag}
                   </span>
@@ -43,7 +43,7 @@ import { servicesData } from '../data/services';
                     VERTICAL {String(index + 1).padStart(2, '0')}
                   </span>
                 </div>
-                <h2 class="heading-2" style="font-size: 1.85rem;">
+                <h2 class="heading-2" style="font-size: clamp(1.4rem, 2.5vw, 1.85rem); line-height: 1.25;">
                   {service.title}
                 </h2>
               </div>
@@ -57,14 +57,14 @@ import { servicesData } from '../data/services';
             </p>
 
             <!-- Technical Capabilities & Specifications Grid -->
-            <div style="background: #ffffff; border: 1px solid rgba(22,21,21,0.08); border-radius: var(--radius-md); padding: 28px; margin-bottom: 28px;">
-              <h4 class="heading-4" style="font-size: 1.05rem; margin-bottom: 16px; color: var(--neutral-04); font-family: var(--font-mono); text-transform: uppercase;">
+            <div style="background: #ffffff; border: 1px solid rgba(22,21,21,0.08); border-radius: var(--radius-md); padding: clamp(16px, 3vw, 24px); margin-bottom: 28px;">
+              <h4 class="heading-4" style="font-size: 1rem; margin-bottom: 16px; color: var(--neutral-04); font-family: var(--font-mono); text-transform: uppercase;">
                 Scope of Supply & Operational Capabilities
               </h4>
-              <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px;">
+              <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr)); gap: 16px;">
                 {service.details.map((item) => (
                   <div style="display: flex; align-items: flex-start; gap: 10px; font-size: 0.925rem; color: var(--neutral-03);">
-                    <span style="color: #0d7543; font-weight: bold; font-size: 1.1rem; line-height: 1;">✓</span>
+                    <span style="color: #0d7543; font-weight: bold; font-size: 1.1rem; line-height: 1; flex-shrink: 0;">✓</span>
                     <span>{item}</span>
                   </div>
                 ))}
@@ -73,10 +73,10 @@ import { servicesData } from '../data/services';
 
             <!-- Action Bar -->
             <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; padding-top: 16px; border-top: 1px solid rgba(22,21,21,0.06);">
-              <div style="font-size: 0.8125rem; font-family: var(--font-mono); color: var(--neutral-03-light);">
+              <div style="font-size: 0.8125rem; font-family: var(--font-mono); color: var(--neutral-03-light); line-height: 1.4;">
                 CLASSIFICATION: {service.category.toUpperCase()} • DELIVERED WEST AFRICA
               </div>
-              <a href={`/contact-us?subject=${encodeURIComponent(service.title)}`} class="btn btn-primary" style="padding: 10px 22px; font-size: 0.875rem;">
+              <a href={`/contact-us?subject=${encodeURIComponent(service.title)}`} class="btn btn-primary" style="padding: 10px 20px; font-size: 0.875rem;">
                 Request Technical Quote & Stems
                 <span class="btn-icon-circle">→</span>
               </a>

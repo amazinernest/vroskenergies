@@ -91,7 +91,7 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site || 'https://vroskene
           <div style="width: 140px; height: 140px; border-radius: var(--radius-lg); overflow: hidden; flex-shrink: 0; background: var(--bg-alt); border: 1px solid rgba(22,21,21,0.08);">
             <img id="modalMemberImg" src="" alt="" style="width: 100%; height: 100%; object-fit: cover;" />
           </div>
-          <div style="flex: 1; min-width: 260px;">
+          <div style="flex: 1; min-width: min(100%, 240px);">
             <div class="badge-pill mint" id="modalMemberDept">Executive Leadership</div>
             <h2 id="modalMemberName" class="heading-3" style="margin-bottom: 6px;"></h2>
             <p id="modalMemberRole" style="font-family: var(--font-mono); font-size: 0.875rem; color: #0b4026; font-weight: 600; margin-bottom: 20px;"></p>
