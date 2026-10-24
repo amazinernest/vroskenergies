@@ -1,0 +1,192 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="Contact Us | Trading Desk & Head Office | Vrosk Energies"
+  description="Connect with Vrosk Energies' trading desk in Lekki Phase 1, Lagos for cargo procurement, terminal storage, gas solutions, and structured finance."
+  currentPath="/contact-us"
+>
+  <!-- Header -->
+  <section class="section" style="padding-top: 60px; padding-bottom: 50px; background: #ffffff; border-bottom: 1px solid rgba(22,21,21,0.06);">
+    <div class="container">
+      <div style="max-width: 840px;">
+        <div class="badge-pill mint">
+          <span class="badge-dot"></span>
+          <span>Commercial Trading Floor</span>
+        </div>
+        <h1 class="heading-1" style="margin-bottom: 20px;">
+          Contact Our Inquiries & Operations Desk
+        </h1>
+        <p class="body-lead">
+          Connect directly with our physical commodity traders, risk structuring specialists, and logistics coordinators at our Lagos headquarters.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Form & Directory Bento Grid -->
+  <section class="section">
+    <div class="container">
+      <div class="bento-hero-grid">
+        <!-- Interactive Form Card -->
+        <div class="bento-card" style="background: #ffffff; padding: clamp(28px, 4vw, 44px);">
+          <div class="mono-tag" style="color: #0b4026; margin-bottom: 12px;">DIRECT INQUIRY FORM</div>
+          <h2 class="heading-2" style="font-size: 1.85rem; margin-bottom: 8px;">
+            Submit Commercial Inquiry
+          </h2>
+          <p class="body-regular" style="margin-bottom: 28px;">
+            Please specify your required product grade, estimated cargo volume, target delivery window, and preferred discharge mechanism.
+          </p>
+
+          <form id="contactForm" style="display: flex; flex-direction: column; gap: 20px;">
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
+              <div>
+                <label for="fullName" style="display: block; font-size: 0.8125rem; font-family: var(--font-mono); text-transform: uppercase; margin-bottom: 6px; color: var(--neutral-04);">
+                  Full Name *
+                </label>
+                <input 
+                  type="text" 
+                  id="fullName" 
+                  name="fullName" 
+                  required 
+                  placeholder="e.g. Adebayo Adeleke" 
+                  style="width: 100%; padding: 13px 18px; border-radius: var(--radius-sm); border: 1px solid rgba(22,21,21,0.15); font-size: 0.95rem; outline: none; background: var(--bg-color);"
+                />
+              </div>
+
+              <div>
+                <label for="email" style="display: block; font-size: 0.8125rem; font-family: var(--font-mono); text-transform: uppercase; margin-bottom: 6px; color: var(--neutral-04);">
+                  Corporate Email *
+                </label>
+                <input 
+                  type="email" 
+                  id="email" 
+                  name="email" 
+                  required 
+                  placeholder="e.g. a.adeleke@energycorp.com" 
+                  style="width: 100%; padding: 13px 18px; border-radius: var(--radius-sm); border: 1px solid rgba(22,21,21,0.15); font-size: 0.95rem; outline: none; background: var(--bg-color);"
+                />
+              </div>
+            </div>
+
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
+              <div>
+                <label for="company" style="display: block; font-size: 0.8125rem; font-family: var(--font-mono); text-transform: uppercase; margin-bottom: 6px; color: var(--neutral-04);">
+                  Company / Institution *
+                </label>
+                <input 
+                  type="text" 
+                  id="company" 
+                  name="company" 
+                  required 
+                  placeholder="e.g. Apex Marine Logistics Ltd" 
+                  style="width: 100%; padding: 13px 18px; border-radius: var(--radius-sm); border: 1px solid rgba(22,21,21,0.15); font-size: 0.95rem; outline: none; background: var(--bg-color);"
+                />
+              </div>
+
+              <div>
+                <label for="desk" style="display: block; font-size: 0.8125rem; font-family: var(--font-mono); text-transform: uppercase; margin-bottom: 6px; color: var(--neutral-04);">
+                  Department / Product Desk *
+                </label>
+                <select 
+                  id="desk" 
+                  name="desk" 
+                  required
+                  style="width: 100%; padding: 13px 18px; border-radius: var(--radius-sm); border: 1px solid rgba(22,21,21,0.15); font-size: 0.95rem; outline: none; background: var(--bg-color);"
+                >
+                  <option value="white-products">White Products (PMS, AGO, Jet A-1, Naphtha)</option>
+                  <option value="heavy-products">Heavy Products (Bitumen, Base Oils, Fuel Oils)</option>
+                  <option value="gas-solutions">Gas Commercialization (LPG, CNG, LNG, NGLs)</option>
+                  <option value="sts-logistics">Ship-to-Ship (STS) & DAP Deliveries</option>
+                  <option value="risk-structuring">Risk Structuring & Derivatives Hedging</option>
+                  <option value="crude-brokerage">Crude Brokerage & Export Stems</option>
+                  <option value="partnerships">Strategic Partnerships & Co-Development</option>
+                </select>
+              </div>
+            </div>
+
+            <div>
+              <label for="message" style="display: block; font-size: 0.8125rem; font-family: var(--font-mono); text-transform: uppercase; margin-bottom: 6px; color: var(--neutral-04);">
+                Inquiry Details & Cargo Specifications *
+              </label>
+              <textarea 
+                id="message" 
+                name="message" 
+                rows="5" 
+                required 
+                placeholder="Please describe volumes, delivery port or STS location, discharge window, and transaction structure..." 
+                style="width: 100%; padding: 14px 18px; border-radius: var(--radius-sm); border: 1px solid rgba(22,21,21,0.15); font-size: 0.95rem; outline: none; background: var(--bg-color); resize: vertical;"
+              ></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary" style="padding: 14px 28px; width: 100%;">
+              Transmit Commercial Inquiry to Desk
+              <span class="btn-icon-circle">→</span>
+            </button>
+          </form>
+
+          <div id="formSuccessToast" style="display: none; padding: 20px; border-radius: var(--radius-md); background: rgba(77,255,176,0.15); border: 1px solid var(--theme-color-01); margin-top: 20px; color: #0b4026;">
+            <div style="font-weight: 600; font-size: 1.05rem; margin-bottom: 4px;">✓ Inquiry Received Successfully</div>
+            <p style="font-size: 0.875rem; line-height: 1.5;">
+              Thank you. Your request has been routed directly to the designated commodity desk. A senior commercial officer will respond within 4 business hours.
+            </p>
+          </div>
+        </div>
+
+        <!-- Directory & Location Cards -->
+        <div style="display: flex; flex-direction: column; gap: 24px;">
+          <!-- Card 1: Lagos Trading Floor -->
+          <div class="bento-card-dark" style="background: var(--dark-surface-01);">
+            <div class="mono-tag" style="color: var(--theme-color-01); margin-bottom: 12px;">HEADQUARTERS & DESK</div>
+            <h3 class="heading-3" style="color: #ffffff; font-size: 1.35rem; margin-bottom: 14px;">
+              Lekki Phase 1 Trading Floor
+            </h3>
+            <div style="display: flex; flex-direction: column; gap: 12px; font-size: 0.925rem; color: #c4bfbf;">
+              <div>
+                <strong style="color: #ffffff;">Office Address:</strong><br />
+                6 Tunde Fisayo Street, Off Ayinde Akinmade,<br />
+                Lekki Phase 1, Lagos, Nigeria
+              </div>
+              <div style="margin-top: 6px;">
+                <strong style="color: #ffffff;">Electronic Inquiries:</strong><br />
+                <a href="mailto:info@vroskenergies.com" style="color: var(--theme-color-01); text-decoration: underline;">
+                  info@vroskenergies.com
+                </a>
+              </div>
+              <div style="margin-top: 6px;">
+                <strong style="color: #ffffff;">Floor Trading Schedule:</strong><br />
+                Monday – Friday: 08:00 – 18:00 (WAT)<br />
+                Maritime Dispatch: 24/7 Monitored
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 2: Strategic Location Highlights -->
+          <div class="bento-card" style="background: #ffffff;">
+            <div class="mono-tag" style="color: #0b4026; margin-bottom: 12px;">REGIONAL DISPATCH HUBS</div>
+            <h4 class="heading-4" style="margin-bottom: 10px;">Deepwater Hub Operations</h4>
+            <ul style="list-style: none; display: flex; flex-direction: column; gap: 8px; font-size: 0.875rem; color: var(--neutral-03);">
+              <li>• Lagos Deep Offshore Logistics Terminal (LADOL & Snake Island)</li>
+              <li>• Port Harcourt & Bonny Offshore Fairway Coordinates</li>
+              <li>• Warri & Escravos River Terminals</li>
+              <li>• Calabar & Delta Coastal Ports</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    const form = document.getElementById('contactForm');
+    const toast = document.getElementById('formSuccessToast');
+    if (form && toast) {
+      form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        form.style.display = 'none';
+        toast.style.display = 'block';
+      });
+    }
+  </script>
+</BaseLayout>

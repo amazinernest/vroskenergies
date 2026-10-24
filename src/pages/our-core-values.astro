@@ -1,0 +1,116 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import CTABanner from '../components/CTABanner.astro';
+
+const coreValues = [
+  {
+    letter: 'V',
+    title: 'Vision',
+    subtitle: 'Strategic Foresight & Forward Momentum',
+    description: 'We anticipate the macroeconomic shifts and energy transition trends reshaping West Africa. Our long-term horizon drives strategic investments in clean gas infrastructure, modular refining, and regional pipeline connectivity.',
+    icon: '🔭'
+  },
+  {
+    letter: 'R',
+    title: 'Resourceful',
+    subtitle: 'Agile Structuring & Problem Solving',
+    description: 'Operating in dynamic frontier markets demands intellectual dexterity and creative trade financing. We structure flexible offtake solutions, multi-modal transport routes, and risk-mitigated credit terms where traditional models fail.',
+    icon: '💡'
+  },
+  {
+    letter: 'O',
+    title: 'Optimize',
+    subtitle: 'Operational Efficiency & Cost Leadership',
+    description: 'We continuously optimize every node of the supply chain—from refinery gate to terminal rack. Minimizing vessel demurrage, maintaining precise STS transfer schedules, and leveraging quantitative analytics protects client margins.',
+    icon: '⚡'
+  },
+  {
+    letter: 'S',
+    title: 'Safety',
+    subtitle: 'Zero Harm to People & Environment',
+    description: 'Safety is non-negotiable. We adhere strictly to ISO 9001, UK Health and Safety Executive HS(G) guidelines, OCIMF marine recommendations, and NMDPRA statutory mandates across all physical cargo movements.',
+    icon: '🛡️'
+  },
+  {
+    letter: 'K',
+    title: 'Knowledgeable',
+    subtitle: 'Market Mastery & Regulatory Precision',
+    description: 'Our team unites veteran downstream physical traders, CFA charterholders, maritime masters, and top-tier legal advisors. This deep domain intelligence ensures seamless regulatory clearance and market-leading trade execution.',
+    icon: '📚'
+  }
+];
+---
+
+<BaseLayout
+  title="Our Core Values (V-R-O-S-K) | Vrosk Energies"
+  description="Discover the core guiding values of Vrosk Energies: Vision, Resourcefulness, Optimization, Safety, and Knowledge."
+  currentPath="/our-core-values"
+>
+  <!-- Header -->
+  <section class="section" style="padding-top: 60px; padding-bottom: 50px; background: #ffffff; border-bottom: 1px solid rgba(22,21,21,0.06);">
+    <div class="container">
+      <div style="max-width: 820px;">
+        <div class="badge-pill mint">
+          <span class="badge-dot"></span>
+          <span>Corporate Culture & Principles</span>
+        </div>
+        <h1 class="heading-1" style="margin-bottom: 20px;">
+          The V-R-O-S-K Value Framework
+        </h1>
+        <p class="body-lead">
+          Our identity and code of conduct are encoded in our name. Every transaction, partnership, and operational deployment is anchored by these five foundational tenets.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Values Bento Grid -->
+  <section class="section">
+    <div class="container">
+      <div style="display: flex; flex-direction: column; gap: 28px;">
+        {coreValues.map((val, index) => (
+          <div class={`bento-card ${index % 2 === 1 ? 'bento-card-dark' : ''}`} style="padding: 36px 44px; display: flex; flex-direction: row; align-items: center; justify-content: space-between; gap: 36px; flex-wrap: wrap;">
+            <!-- Letter Monogram Badge -->
+            <div style="display: flex; align-items: center; gap: 24px;">
+              <div style={`width: 72px; height: 72px; border-radius: var(--radius-lg); display: flex; align-items: center; justify-content: center; font-family: var(--font-heading); font-size: 2.25rem; font-weight: 700; ${index % 2 === 1 ? 'background: var(--theme-color-01); color: var(--neutral-04);' : 'background: var(--neutral-04); color: #ffffff;'}`}>
+                {val.letter}
+              </div>
+              <div>
+                <span class="mono-tag" style={index % 2 === 1 ? 'color: var(--theme-color-01);' : 'color: #0d7543;'}>
+                  {val.subtitle}
+                </span>
+                <h2 class="heading-2" style={`font-size: 1.85rem; margin-top: 4px; ${index % 2 === 1 ? 'color: #ffffff;' : ''}`}>
+                  {val.title}
+                </h2>
+              </div>
+            </div>
+
+            <!-- Description -->
+            <div style="flex: 1; min-width: 300px; max-width: 640px;">
+              <p style={`font-size: 0.95rem; line-height: 1.65; ${index % 2 === 1 ? 'color: #c4bfbf;' : 'color: var(--neutral-03);'}`}>
+                {val.description}
+              </p>
+            </div>
+
+            <div style="font-size: 2rem;" aria-hidden="true">
+              {val.icon}
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <!-- Quick Links Bar -->
+      <div style="margin-top: 48px; padding: 32px; background: #ffffff; border-radius: var(--radius-lg); border: 1px solid rgba(22,21,21,0.08); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px;">
+        <div>
+          <h4 class="heading-4" style="margin-bottom: 4px;">Explore How Our Values Drive Our Competence</h4>
+          <p class="body-small">Review our 10 core technical and commercial capabilities across the oil and gas sector.</p>
+        </div>
+        <a href="/our-competence" class="btn btn-primary">
+          Our Competence Matrix →
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <CTABanner />
+</BaseLayout>

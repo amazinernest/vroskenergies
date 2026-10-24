@@ -1,0 +1,87 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import CTABanner from '../components/CTABanner.astro';
+import { teamMembers } from '../data/team';
+---
+
+<BaseLayout
+  title="Our Management Team | Vrosk Energies"
+  description="Meet the executive leadership team steering Vrosk Energies—seasoned commodity traders, investment bankers, charterholders, and legal advisors."
+  currentPath="/management-team"
+>
+  <!-- Header -->
+  <section class="section" style="padding-top: 60px; padding-bottom: 50px; background: #ffffff; border-bottom: 1px solid rgba(22,21,21,0.06);">
+    <div class="container">
+      <div style="max-width: 840px;">
+        <div class="badge-pill mint">
+          <span class="badge-dot"></span>
+          <span>Executive Governance</span>
+        </div>
+        <h1 class="heading-1" style="margin-bottom: 20px;">
+          Our Management Team
+        </h1>
+        <p class="body-lead">
+          Vrosk Energies is led by seasoned energy executives, international fixed income brokers, CFA charterholders, and corporate lawyers with decades of combined execution experience in West Africa and global financial centers.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Executive Team Cards Grid -->
+  <section class="section">
+    <div class="container">
+      <div class="bento-grid-3">
+        {teamMembers.map((member) => (
+          <div class="bento-card" style="padding: 32px; justify-content: space-between;">
+            <div>
+              <div style="width: 100%; aspect-ratio: 1/1; border-radius: var(--radius-md); overflow: hidden; margin-bottom: 24px; background: var(--bg-alt); position: relative;">
+                <img 
+                  src={member.image} 
+                  alt={member.name}
+                  style="width: 100%; height: 100%; object-fit: cover;"
+                  loading="lazy"
+                />
+                <div style="position: absolute; top: 12px; left: 12px;">
+                  <span class="badge-pill" style="background: rgba(255,255,255,0.92); backdrop-filter: blur(8px); margin: 0; font-size: 0.7rem; border-color: rgba(0,0,0,0.06);">
+                    {member.department}
+                  </span>
+                </div>
+              </div>
+
+              <h2 class="heading-3" style="font-size: 1.35rem; margin-bottom: 6px;">
+                {member.name}
+              </h2>
+
+              <p style="font-family: var(--font-mono); font-size: 0.8125rem; color: #0b4026; font-weight: 600; margin-bottom: 16px;">
+                {member.role}
+              </p>
+
+              <p class="body-small" style="line-height: 1.65; margin-bottom: 24px;">
+                {member.summary}
+              </p>
+            </div>
+
+            <div style="padding-top: 18px; border-top: 1px solid rgba(22,21,21,0.08);">
+              <button 
+                type="button"
+                class="btn btn-secondary"
+                style="width: 100%; font-size: 0.875rem;"
+                data-team-trigger
+                data-name={member.name}
+                data-role={member.role}
+                data-dept={member.department}
+                data-img={member.image}
+                data-bio={member.fullBio}
+              >
+                Read Complete Profile
+                <span class="btn-icon-circle">→</span>
+              </button>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <CTABanner />
+</BaseLayout>

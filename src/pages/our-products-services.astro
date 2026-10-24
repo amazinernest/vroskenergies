@@ -1,0 +1,91 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import CTABanner from '../components/CTABanner.astro';
+import { servicesData } from '../data/services';
+---
+
+<BaseLayout
+  title="Our Products & Services | Vrosk Energies"
+  description="Explore the full spectrum of petroleum products, heavy fuels, white fuels, clean gas solutions, and risk structuring services offered by Vrosk Energies."
+  currentPath="/our-products-services"
+>
+  <!-- Header -->
+  <section class="section" style="padding-top: 60px; padding-bottom: 50px; background: #ffffff; border-bottom: 1px solid rgba(22,21,21,0.06);">
+    <div class="container">
+      <div style="max-width: 860px;">
+        <div class="badge-pill mint">
+          <span class="badge-dot"></span>
+          <span>Comprehensive Product Directory</span>
+        </div>
+        <h1 class="heading-1" style="margin-bottom: 20px;">
+          Our Products, Commodities & Infrastructure Services
+        </h1>
+        <p class="body-lead">
+          We offer an integrated range of services to help businesses across the West African energy and manufacturing sectors succeed. Our experts provide efficient, reliable, and cost-effective solutions tailored to your operational needs.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Products & Services Detail Grid -->
+  <section class="section">
+    <div class="container">
+      <div style="display: flex; flex-direction: column; gap: 40px;">
+        {servicesData.map((service, index) => (
+          <div class="bento-card" id={service.id} style={`padding: 44px; ${index % 2 === 1 ? 'background: #ffffff;' : 'background: #fafafa;'}`}>
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 16px; margin-bottom: 20px;">
+              <div>
+                <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 8px;">
+                  <span class="mono-tag" style="color: #0b4026; background: rgba(77,255,176,0.18); padding: 4px 12px; border-radius: var(--radius-full);">
+                    {service.tag}
+                  </span>
+                  <span style="font-family: var(--font-mono); font-size: 0.8125rem; color: var(--neutral-03);">
+                    VERTICAL {String(index + 1).padStart(2, '0')}
+                  </span>
+                </div>
+                <h2 class="heading-2" style="font-size: 1.85rem;">
+                  {service.title}
+                </h2>
+              </div>
+              <div style="font-size: 2.25rem;" aria-hidden="true">
+                {service.icon}
+              </div>
+            </div>
+
+            <p class="body-lead" style="font-size: 1.05rem; margin-bottom: 28px; max-width: 840px;">
+              {service.summary}
+            </p>
+
+            <!-- Technical Capabilities & Specifications Grid -->
+            <div style="background: #ffffff; border: 1px solid rgba(22,21,21,0.08); border-radius: var(--radius-md); padding: 28px; margin-bottom: 28px;">
+              <h4 class="heading-4" style="font-size: 1.05rem; margin-bottom: 16px; color: var(--neutral-04); font-family: var(--font-mono); text-transform: uppercase;">
+                Scope of Supply & Operational Capabilities
+              </h4>
+              <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px;">
+                {service.details.map((item) => (
+                  <div style="display: flex; align-items: flex-start; gap: 10px; font-size: 0.925rem; color: var(--neutral-03);">
+                    <span style="color: #0d7543; font-weight: bold; font-size: 1.1rem; line-height: 1;">✓</span>
+                    <span>{item}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <!-- Action Bar -->
+            <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; padding-top: 16px; border-top: 1px solid rgba(22,21,21,0.06);">
+              <div style="font-size: 0.8125rem; font-family: var(--font-mono); color: var(--neutral-03-light);">
+                CLASSIFICATION: {service.category.toUpperCase()} • DELIVERED WEST AFRICA
+              </div>
+              <a href={`/contact-us?subject=${encodeURIComponent(service.title)}`} class="btn btn-primary" style="padding: 10px 22px; font-size: 0.875rem;">
+                Request Technical Quote & Stems
+                <span class="btn-icon-circle">→</span>
+              </a>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <CTABanner />
+</BaseLayout>

@@ -1,0 +1,109 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Hero from '../components/Hero.astro';
+import MetricsBento from '../components/MetricsBento.astro';
+import ServicesBento from '../components/ServicesBento.astro';
+import RoadmapTimeline from '../components/RoadmapTimeline.astro';
+import TeamGrid from '../components/TeamGrid.astro';
+import PartnersShowcase from '../components/PartnersShowcase.astro';
+import HSECommitment from '../components/HSECommitment.astro';
+import ArticlesPreview from '../components/ArticlesPreview.astro';
+import CTABanner from '../components/CTABanner.astro';
+---
+
+<BaseLayout
+  title="Vrosk Energies | Integrated Pan-African Energy, Trading & Infrastructure"
+  description="Vrosk Energies is a premier Pan-African integrated energy enterprise providing physical petroleum trading, supply chain risk structuring, bonded storage logistics, and clean gas solutions in West Africa."
+  currentPath="/"
+>
+  <!-- Outgriid Hero Section -->
+  <Hero />
+
+  <!-- Outgriid Metrics & Key Statistics Banner -->
+  <MetricsBento />
+
+  <!-- Outgriid Section: About & Strategic Advantage -->
+  <section class="section" style="padding-top: 40px; padding-bottom: 70px;">
+    <div class="container">
+      <div class="bento-hero-grid">
+        <div class="bento-card" style="background: #ffffff; justify-content: space-between;">
+          <div>
+            <div class="badge-pill mint">
+              <span class="badge-dot"></span>
+              <span>Our Strategic Position</span>
+            </div>
+            <h2 class="heading-2" style="margin-bottom: 18px;">
+              Direct Investment & Operational Mastery in West African Energy
+            </h2>
+            <p class="body-lead" style="margin-bottom: 20px;">
+              The birth of Vrosk was born directly out of our parent group Trosk’s vision to transition from third-party sector investments into becoming an active direct participant in West Africa’s energy infrastructure.
+            </p>
+            <p class="body-regular" style="margin-bottom: 24px;">
+              By combining international commodity trading expertise with local market insight, financial risk structuring from capital markets partners, and rigorous regulatory compliance, Vrosk delivers dependable energy solutions that reduce national dependence on unstable foreign supplies while driving clean fuel transitions.
+            </p>
+          </div>
+          <div style="display: flex; gap: 14px; flex-wrap: wrap;">
+            <a href="/our-company-overview" class="btn btn-primary">
+              Company Overview & Heritage
+              <span class="btn-icon-circle">→</span>
+            </a>
+            <a href="/our-competence" class="btn btn-secondary">
+              Our Core Competencies
+            </a>
+          </div>
+        </div>
+
+        <div style="display: flex; flex-direction: column; gap: 24px;">
+          <!-- Bento Feature 1: Downstream Precision -->
+          <div class="bento-card" style="background: #ffffff;">
+            <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 12px;">
+              <span class="mono-tag" style="color: #0b4026;">SUPPLY CONTINUITY</span>
+              <span style="font-size: 1.25rem;">⚓</span>
+            </div>
+            <h3 class="heading-3" style="font-size: 1.25rem; margin-bottom: 8px;">
+              Coastal Storage & STS Logistics
+            </h3>
+            <p class="body-regular" style="font-size: 0.925rem;">
+              Securing high-capacity bonded tank storage across Nigerian ports and executing ship-to-ship offshore deliveries under international OCIMF protocols.
+            </p>
+          </div>
+
+          <!-- Bento Feature 2: Clean Gas Solutions -->
+          <div class="bento-card-dark" style="background: var(--dark-surface-01);">
+            <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 12px;">
+              <span class="mono-tag" style="color: var(--theme-color-01);">CLEAN TRANSITION</span>
+              <span style="font-size: 1.25rem;">🌱</span>
+            </div>
+            <h3 class="heading-3" style="font-size: 1.25rem; color: #ffffff; margin-bottom: 8px;">
+              Gas Commercialization: LPG & CNG
+            </h3>
+            <p style="color: #a8a4a4; font-size: 0.925rem; line-height: 1.55;">
+              Scalable wholesale gas distribution and virtual pipelines to fuel industrial boilers, automotive conversions, and regional domestic power.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Core Products & Services Showcase -->
+  <ServicesBento limit={6} showAllLink={true} />
+
+  <!-- Outgriid Strategic RoadMap: Where We Are vs Where We Are Going -->
+  <RoadmapTimeline />
+
+  <!-- Executive Management Team -->
+  <TeamGrid limit={6} />
+
+  <!-- Strategic Partners Ecosystem -->
+  <PartnersShowcase />
+
+  <!-- HSE & Corporate Responsibility -->
+  <HSECommitment />
+
+  <!-- Market Intelligence & Energy Articles -->
+  <ArticlesPreview limit={3} />
+
+  <!-- High-Impact CTA Banner -->
+  <CTABanner />
+</BaseLayout>

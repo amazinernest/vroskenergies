@@ -1,0 +1,121 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import CTABanner from '../components/CTABanner.astro';
+
+const operationalPillars = [
+  {
+    number: '01',
+    title: 'Innovative Thinking & Transformative Processes',
+    description: 'At the core of our operations is our unyielding commitment to innovative thinking. We develop and apply new ideas to provide services in the oil and gas space that are truly transformative. Our team is constantly exploring new technologies, automated telemetry, and modernized workflows to deliver continuous operational improvements.',
+    icon: '💡'
+  },
+  {
+    number: '02',
+    title: 'Efficient Procurement & Supply Reliability',
+    description: 'We excel in the efficient, dependable procurement and bulk supply of petroleum products. Understanding the critical nature of uninterrupted energy access for manufacturing plants and retail stations, we work closely with refinery partners and vessel operators to ensure our clients always have the fuel required to power their operations.',
+    icon: '⛽'
+  },
+  {
+    number: '03',
+    title: 'Strategic International Partnerships',
+    description: 'We recognize the multiplier effect of collaboration. Vrosk has established strong relationships with key global trading desks, accredited international charterers, and maritime inspection agencies. Through these alliances, we leverage collective balance-sheet strength, global vessel access, and market intelligence to serve clients seamlessly.',
+    icon: '🌐'
+  },
+  {
+    number: '04',
+    title: 'Effective Product Storage & Quality Preservation',
+    description: 'Proper storage and handling of petroleum products is vital to maintaining technical specification and safety. Our operations team designs and manages tank farm storage arrangements that meet the most stringent international standards, preventing contamination, monitoring ullage, and guaranteeing swift vessel-to-tank discharge.',
+    icon: '🏭'
+  },
+  {
+    number: '05',
+    title: 'High Commercial Awareness & Market Intelligence',
+    description: 'Our operations desk is distinguished by profound commercial awareness. We actively monitor global crack spreads, OPEC+ policies, currency movements, and regional West African arbitrage flows. This intelligence enables us to guide clients toward optimal purchase timing and competitive margin preservation in a volatile market.',
+    icon: '📈'
+  }
+];
+---
+
+<BaseLayout
+  title="Our Operation & Strategic Methods | Vrosk Energies"
+  description="Explore the operational methods, terminal storage structures, and supply logistics that power Vrosk Energies across West Africa."
+  currentPath="/our-operation"
+>
+  <!-- Header -->
+  <section class="section" style="padding-top: 60px; padding-bottom: 50px; background: #ffffff; border-bottom: 1px solid rgba(22,21,21,0.06);">
+    <div class="container">
+      <div style="max-width: 840px;">
+        <div class="badge-pill mint">
+          <span class="badge-dot"></span>
+          <span>Field Logistics & Delivery Systems</span>
+        </div>
+        <h1 class="heading-1" style="margin-bottom: 20px;">
+          Strategic Methods & Operational Infrastructure
+        </h1>
+        <p class="body-lead">
+          Our field operations integrate bulk cargo procurement, offshore maritime transfers, bonded coastal storage, and real-time market intelligence into an efficient, dependable delivery engine.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Hero Visual Banner -->
+  <section style="background: var(--bg-color); padding: 40px 0;">
+    <div class="container">
+      <div style="border-radius: var(--radius-xl); overflow: hidden; height: 380px; position: relative; border: 1px solid rgba(22,21,21,0.08);">
+        <img 
+          src="/assets/refinery-chad.webp" 
+          alt="Refinery Terminal and Product Distribution Logistics" 
+          style="width: 100%; height: 100%; object-fit: cover;" 
+        />
+        <div style="position: absolute; inset: 0; background: linear-gradient(180deg, transparent 40%, rgba(22,21,21,0.85) 100%);"></div>
+        <div style="position: absolute; bottom: 32px; left: 32px; right: 32px; display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: 16px;">
+          <div>
+            <span class="badge-pill dark" style="margin-bottom: 8px; font-size: 0.75rem;">COASTAL LOGISTICS</span>
+            <h3 class="heading-3" style="color: #ffffff; font-size: 1.5rem;">Managing Deepwater Ship-to-Ship & Tank Farm Transfers</h3>
+          </div>
+          <span style="font-family: var(--font-mono); font-size: 0.8125rem; color: var(--theme-color-01); background: rgba(0,0,0,0.5); padding: 6px 14px; border-radius: var(--radius-full);">
+            OCIMF & MARPOL ACCREDITED
+          </span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Five Operational Pillars -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="heading-2">
+          The Five Pillars of Our Operational Excellence
+        </h2>
+        <p class="body-lead" style="margin-top: 12px;">
+          Engineered to ensure zero contamination, zero demurrage loss, and maximum supply chain transparency.
+        </p>
+      </div>
+
+      <div style="display: flex; flex-direction: column; gap: 24px;">
+        {operationalPillars.map((pillar, idx) => (
+          <div class={`bento-card ${idx % 2 === 1 ? 'bento-card-dark' : ''}`} style="padding: 36px;">
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 16px; flex-wrap: wrap; gap: 12px;">
+              <div style="display: flex; align-items: center; gap: 16px;">
+                <span style={`font-family: var(--font-mono); font-size: 1.25rem; font-weight: 700; ${idx % 2 === 1 ? 'color: var(--theme-color-01);' : 'color: #0b4026;'}`}>
+                  {pillar.number}
+                </span>
+                <h3 class="heading-3" style={`font-size: 1.4rem; ${idx % 2 === 1 ? 'color: #ffffff;' : ''}`}>
+                  {pillar.title}
+                </h3>
+              </div>
+              <span style="font-size: 1.75rem;" aria-hidden="true">{pillar.icon}</span>
+            </div>
+            <p style={`font-size: 0.95rem; line-height: 1.65; max-width: 900px; ${idx % 2 === 1 ? 'color: #b0acac;' : 'color: var(--neutral-03);'}`}>
+              {pillar.description}
+            </p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <CTABanner />
+</BaseLayout>

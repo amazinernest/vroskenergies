@@ -1,0 +1,110 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import CTABanner from '../components/CTABanner.astro';
+import { articlesData } from '../data/articles';
+
+const article = articlesData[1];
+const otherArticles = articlesData.filter((a) => a.slug !== article.slug);
+---
+
+<BaseLayout
+  title={`${article.title} | Vrosk Energies`}
+  description={article.excerpt}
+  ogImage={article.image}
+  currentPath={`/${article.slug}`}
+>
+  <!-- Article Header -->
+  <section class="section" style="padding-top: 60px; padding-bottom: 40px; background: #ffffff; border-bottom: 1px solid rgba(22,21,21,0.06);">
+    <div class="container-narrow">
+      <div style="margin-bottom: 20px;">
+        <a href="/news-and-insights" style="font-family: var(--font-mono); font-size: 0.8125rem; color: #0b4026; text-transform: uppercase; display: inline-flex; align-items: center; gap: 6px;">
+          ← Back to All Insights
+        </a>
+      </div>
+
+      <div class="badge-pill mint" style="margin-bottom: 18px;">
+        <span class="badge-dot"></span>
+        <span>{article.category}</span>
+      </div>
+
+      <h1 class="heading-1" style="margin-bottom: 24px; font-size: clamp(2rem, 4vw, 3.25rem);">
+        {article.title}
+      </h1>
+
+      <div style="display: flex; align-items: center; gap: 20px; font-size: 0.875rem; color: var(--neutral-03); font-family: var(--font-mono); flex-wrap: wrap;">
+        <span>By {article.author}</span>
+        <span>•</span>
+        <span>{article.date}</span>
+        <span>•</span>
+        <span>{article.readTime}</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Article Hero Visual -->
+  <section style="background: var(--bg-color); padding: 40px 0;">
+    <div class="container-narrow">
+      <div style="border-radius: var(--radius-xl); overflow: hidden; max-height: 500px; border: 1px solid rgba(22,21,21,0.08);">
+        <img 
+          src={article.image} 
+          alt={article.title} 
+          style="width: 100%; height: 100%; object-fit: cover;" 
+        />
+      </div>
+    </div>
+  </section>
+
+  <!-- Article Content Body -->
+  <article class="section" style="padding-top: 20px; padding-bottom: 70px;">
+    <div class="container-narrow">
+      <div style="background: #ffffff; padding: clamp(28px, 5vw, 56px); border-radius: var(--radius-xl); border: 1px solid rgba(22,21,21,0.08);">
+        <div style="font-size: 1.125rem; line-height: 1.8; color: var(--neutral-04); display: flex; flex-direction: column; gap: 24px;">
+          {article.content.map((para, i) => (
+            <div>
+              {i === 3 && (
+                <blockquote style="background: var(--bg-color); border-left: 4px solid var(--theme-color-01); padding: 24px 28px; border-radius: 0 var(--radius-md) var(--radius-md) 0; margin: 32px 0; font-family: var(--font-heading); font-size: 1.25rem; line-height: 1.6; color: var(--neutral-04);">
+                  "The commissioning of merchant refining capacity in Lekki and the PIA regulatory framework represent the single largest structural realignment in Nigerian downstream history."
+                </blockquote>
+              )}
+              <p>{para}</p>
+            </div>
+          ))}
+        </div>
+
+        <!-- Share & Tags -->
+        <div style="margin-top: 48px; padding-top: 28px; border-top: 1px solid rgba(22,21,21,0.08); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px;">
+          <div style="display: flex; gap: 10px; align-items: center; flex-wrap: wrap;">
+            <span class="mono-tag" style="color: var(--neutral-03);">TOPICS:</span>
+            <span class="badge-pill" style="margin: 0; font-size: 0.75rem;">NIGERIAN OIL</span>
+            <span class="badge-pill" style="margin: 0; font-size: 0.75rem;">OPEC+ QUOTAS</span>
+            <span class="badge-pill" style="margin: 0; font-size: 0.75rem;">PIA LEGISLATION</span>
+          </div>
+          <a href="/contact-us" class="btn btn-secondary" style="font-size: 0.8125rem;">
+            Inquire Bulk Offtake With Desk →
+          </a>
+        </div>
+      </div>
+
+      <!-- Related Insights -->
+      <div style="margin-top: 64px;">
+        <h3 class="heading-3" style="margin-bottom: 24px;">Related Energy Analyses</h3>
+        <div class="bento-grid-2">
+          {otherArticles.map((rel) => (
+            <div class="bento-card" style="padding: 24px; justify-content: space-between; background: #ffffff;">
+              <div>
+                <span class="mono-tag" style="color: #0b4026; margin-bottom: 8px; display: block;">{rel.category}</span>
+                <h4 class="heading-4" style="margin-bottom: 8px;">
+                  <a href={`/${rel.slug}`}>{rel.title}</a>
+                </h4>
+                <p class="body-small" style="line-height: 1.6; margin-bottom: 16px;">{rel.excerpt}</p>
+              </div>
+              <a href={`/${rel.slug}`} style="font-weight: 600; font-size: 0.875rem; color: var(--neutral-04);">Read Analysis →</a>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <CTABanner />
+</BaseLayout>

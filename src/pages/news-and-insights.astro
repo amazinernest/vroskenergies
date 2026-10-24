@@ -1,0 +1,77 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import CTABanner from '../components/CTABanner.astro';
+import { articlesData } from '../data/articles';
+---
+
+<BaseLayout
+  title="News & Insights | Vrosk Energies"
+  description="Explore the latest energy analysis, oil market trends in Nigeria, sustainable innovation, and technology briefs from Vrosk Energies research desk."
+  currentPath="/news-and-insights"
+>
+  <!-- Header -->
+  <section class="section" style="padding-top: 60px; padding-bottom: 50px; background: #ffffff; border-bottom: 1px solid rgba(22,21,21,0.06);">
+    <div class="container">
+      <div style="max-width: 840px;">
+        <div class="badge-pill mint">
+          <span class="badge-dot"></span>
+          <span>Market Intelligence & Analysis</span>
+        </div>
+        <h1 class="heading-1" style="margin-bottom: 20px;">
+          News, Perspectives & Energy Insights
+        </h1>
+        <p class="body-lead">
+          Strategic commentary and in-depth briefs on West African petroleum flows, energy transition technology, regulatory policy developments, and commodity trading dynamics.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Articles Bento Grid -->
+  <section class="section">
+    <div class="container">
+      <div class="bento-grid-3">
+        {articlesData.map((article) => (
+          <article class="bento-card" style="padding: 28px; justify-content: space-between;">
+            <div>
+              <div style="width: 100%; aspect-ratio: 16/10; border-radius: var(--radius-md); overflow: hidden; margin-bottom: 22px; background: var(--bg-alt);">
+                <img 
+                  src={article.image} 
+                  alt={article.title}
+                  style="width: 100%; height: 100%; object-fit: cover;"
+                  loading="lazy"
+                />
+              </div>
+
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; font-size: 0.8125rem; font-family: var(--font-mono); color: var(--neutral-03);">
+                <span style="color: #0b4026; font-weight: 600;">{article.category}</span>
+                <span>{article.readTime}</span>
+              </div>
+
+              <h2 class="heading-3" style="font-size: 1.3rem; margin-bottom: 14px; line-height: 1.35;">
+                <a href={`/${article.slug}`} style="color: inherit;">
+                  {article.title}
+                </a>
+              </h2>
+
+              <p class="body-regular" style="font-size: 0.925rem; line-height: 1.6; margin-bottom: 24px;">
+                {article.excerpt}
+              </p>
+            </div>
+
+            <div style="padding-top: 18px; border-top: 1px solid rgba(22,21,21,0.08); display: flex; justify-content: space-between; align-items: center;">
+              <span style="font-size: 0.8125rem; color: var(--neutral-03-light);">
+                {article.date}
+              </span>
+              <a href={`/${article.slug}`} class="btn btn-secondary" style="font-size: 0.8125rem; padding: 8px 16px;">
+                Read Article →
+              </a>
+            </div>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <CTABanner />
+</BaseLayout>

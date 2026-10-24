@@ -1,0 +1,91 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import CTABanner from '../components/CTABanner.astro';
+---
+
+<BaseLayout
+  title="Krosk Partners Limited | Partner Profile | Vrosk Energies"
+  description="Discover Krosk Partners Limited, an institutional inter-dealer brokerage company facilitating fixed income trade execution in Nigerian capital markets."
+  currentPath="/krosk-partners-limited"
+>
+  <!-- Header -->
+  <section class="section" style="padding-top: 60px; padding-bottom: 50px; background: #ffffff; border-bottom: 1px solid rgba(22,21,21,0.06);">
+    <div class="container">
+      <div style="max-width: 840px;">
+        <div class="badge-pill mint">
+          <span class="badge-dot"></span>
+          <span>Capital Markets Partner</span>
+        </div>
+        <h1 class="heading-1" style="margin-bottom: 20px;">
+          Krosk Partners Limited
+        </h1>
+        <p class="body-lead">
+          An institutional Nigerian inter-dealer brokerage firm incorporated in May 2015, acting as accredited intermediaries to facilitate trade executions across sovereign bonds, treasury bills, and fixed income securities.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Profile Content -->
+  <section class="section">
+    <div class="container">
+      <div class="bento-hero-grid">
+        <div class="bento-card" style="background: #ffffff; padding: 44px; justify-content: space-between;">
+          <div>
+            <div class="mono-tag" style="color: #0b4026; margin-bottom: 14px;">INSTITUTIONAL BROKERAGE</div>
+            <h2 class="heading-2" style="font-size: 1.85rem; margin-bottom: 20px;">
+              Fixed Income Intermediation & Capital Markets Precision
+            </h2>
+            <p class="body-regular" style="margin-bottom: 18px; font-size: 1rem; line-height: 1.7;">
+              Incorporated in May 2015, Krosk Partners Limited operates as a premier Nigerian inter-dealer broker (IDB). As associate members of the FMDQ OTC Securities Exchange, the firm provides wholesale market price discovery and neutral trade execution to domestic banks, pension fund administrators (PFAs), insurance houses, and international institutional investors.
+            </p>
+            <p class="body-regular" style="margin-bottom: 24px; font-size: 1rem; line-height: 1.7;">
+              Led by Managing Director Shola Adeniyi (former inter-dealer broker at Barclays Capital and BGC Partners London), Krosk has established itself as an agile leader on the trading floor, connecting buyers and sellers with utmost confidentiality and high liquidity.
+            </p>
+
+            <div style="background: var(--bg-color); border-radius: var(--radius-md); padding: 24px;">
+              <h4 class="heading-4" style="font-size: 1.05rem; margin-bottom: 10px;">Strategic Synergy with Vrosk Energies</h4>
+              <p style="font-size: 0.925rem; color: var(--neutral-03); line-height: 1.6;">
+                Krosk Partners provides Vrosk Energies with direct treasury intelligence, macro yield curve analytics, foreign exchange hedging channels, and liquidity access necessary to finance large-scale cargo stems and terminal acquisitions.
+              </p>
+            </div>
+          </div>
+
+          <div style="padding-top: 24px; border-top: 1px solid rgba(22,21,21,0.08); margin-top: 24px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px;">
+            <div style="font-size: 0.8125rem; font-family: var(--font-mono); color: var(--neutral-03);">
+              HEADQUARTERS: LEKKI PHASE 1, LAGOS
+            </div>
+            <a href="https://kroskpartners.com" target="_blank" rel="noopener noreferrer" class="btn btn-secondary" style="font-size: 0.875rem;">
+              Visit Krosk Partners Website ↗
+            </a>
+          </div>
+        </div>
+
+        <!-- Sidebar Bento Cards -->
+        <div style="display: flex; flex-direction: column; gap: 24px;">
+          <div class="bento-card-dark" style="background: var(--dark-surface-01);">
+            <div class="mono-tag" style="color: var(--theme-color-01); margin-bottom: 12px;">KEY METRICS</div>
+            <div class="stat-number" style="font-size: 2.75rem; margin-bottom: 8px;">
+              2015
+            </div>
+            <div class="stat-label" style="color: #ffffff; margin-bottom: 12px;">Year Incorporated in Nigeria</div>
+            <p style="color: #a8a4a4; font-size: 0.875rem; line-height: 1.6;">
+              Over a decade of trusted inter-dealer execution on FMDQ OTC Securities Exchange.
+            </p>
+          </div>
+
+          <div class="bento-card" style="background: #ffffff;">
+            <div class="mono-tag" style="color: #0b4026; margin-bottom: 12px;">SHARED LEADERSHIP</div>
+            <h3 class="heading-3" style="font-size: 1.25rem; margin-bottom: 8px;">Shola Adeniyi</h3>
+            <p class="body-small" style="margin-bottom: 16px;">Managing Director, Krosk Partners & Co-Founder, Vrosk Energies.</p>
+            <a href="/management-team" style="font-weight: 600; font-size: 0.875rem; color: var(--neutral-04);">
+              View Executive Profile →
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <CTABanner />
+</BaseLayout>

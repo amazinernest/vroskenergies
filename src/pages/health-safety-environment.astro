@@ -1,0 +1,81 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import CTABanner from '../components/CTABanner.astro';
+---
+
+<BaseLayout
+  title="Health, Safety & Environment (HSE) | Vrosk Energies"
+  description="Learn about Vrosk Energies' HSE management system, ISO 9001 alignment, UK HSE HS(G) guidelines, and zero-harm policy."
+  currentPath="/health-safety-environment"
+>
+  <!-- Header -->
+  <section class="section" style="padding-top: 60px; padding-bottom: 50px; background: #ffffff; border-bottom: 1px solid rgba(22,21,21,0.06);">
+    <div class="container">
+      <div style="max-width: 840px;">
+        <div class="badge-pill mint">
+          <span class="badge-dot"></span>
+          <span>Zero Harm Policy</span>
+        </div>
+        <h1 class="heading-1" style="margin-bottom: 20px;">
+          Health, Safety & Environment (HSE)
+        </h1>
+        <p class="body-lead">
+          We recognize the critical importance of our host communities, the environment, the health of our staff and operating partners, and the general wellbeing of all stakeholders.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Content Section -->
+  <section class="section">
+    <div class="container">
+      <div class="bento-hero-grid">
+        <div class="bento-card" style="background: #ffffff; padding: 44px;">
+          <div class="mono-tag" style="color: #0b4026; margin-bottom: 14px;">POLICY STATEMENT</div>
+          <h2 class="heading-2" style="font-size: 1.85rem; margin-bottom: 20px;">
+            Driven by Equity, Respect, and International Standards
+          </h2>
+          <p class="body-regular" style="margin-bottom: 18px; font-size: 1rem; line-height: 1.7;">
+            Our HSE policy is driven by the conviction that our stakeholders and immediate communities must be treated with equity, respect, and honesty. Every operational deployment—whether at maritime discharge berths, terminal tank farms, or product transit routes—is planned with rigorous safety safeguards.
+          </p>
+          <p class="body-regular" style="margin-bottom: 18px; font-size: 1rem; line-height: 1.7;">
+            Our safety procedures incorporate all aspects of Health, Safety, and Environment. They are rigorously structured upon the quality management requirements of <strong>ISO 9001</strong> and the <strong>UK Health and Safety Executive HS (G) guidelines</strong> for effective safety management and environmental compliance.
+          </p>
+          <div style="background: var(--bg-color); border-radius: var(--radius-md); padding: 24px; margin-top: 24px;">
+            <h4 class="heading-4" style="font-size: 1.1rem; margin-bottom: 12px;">Core HSE Principles</h4>
+            <ul style="list-style: none; display: flex; flex-direction: column; gap: 10px; font-size: 0.925rem; color: var(--neutral-03);">
+              <li>✓ Mandatory Stop-Work Authority for all workers and contractors whenever unsafe conditions arise</li>
+              <li>✓ Strict adherence to OCIMF and MARPOL offshore transfer protocols for all Ship-to-Ship lightering</li>
+              <li>✓ Routine third-party audits of chartered product tankers, storage tanks, and terminal loading racks</li>
+              <li>✓ Continuous occupational health training, PPE provision, and incident prevention drills</li>
+            </ul>
+          </div>
+        </div>
+
+        <div style="display: flex; flex-direction: column; gap: 24px;">
+          <div class="bento-card-dark" style="background: var(--dark-surface-01);">
+            <div class="mono-tag" style="color: var(--theme-color-01); margin-bottom: 12px;">PERFORMANCE BENCHMARK</div>
+            <h3 class="heading-3" style="color: #ffffff; font-size: 1.35rem; margin-bottom: 10px;">
+              Zero Lost Time Incidents (LTI)
+            </h3>
+            <p style="color: #a8a4a4; font-size: 0.925rem; line-height: 1.6;">
+              Through proactive hazard identification and systematic risk mitigation, Vrosk maintains an unblemished safety record across our physical product trading and offshore STS operations.
+            </p>
+          </div>
+
+          <div class="bento-card" style="background: #ffffff;">
+            <div class="mono-tag" style="color: #0b4026; margin-bottom: 12px;">ENVIRONMENTAL INTEGRITY</div>
+            <h3 class="heading-3" style="font-size: 1.35rem; margin-bottom: 10px;">
+              Spill Prevention & Response
+            </h3>
+            <p class="body-regular" style="font-size: 0.925rem; line-height: 1.6;">
+              Certified oil spill containment booms, dispersants, and trained emergency teams are positioned at all transfer points to guarantee marine ecological preservation.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <CTABanner />
+</BaseLayout>

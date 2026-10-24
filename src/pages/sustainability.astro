@@ -1,0 +1,83 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import CTABanner from '../components/CTABanner.astro';
+import HSECommitment from '../components/HSECommitment.astro';
+---
+
+<BaseLayout
+  title="Sustainability & Environmental Stewardship | Vrosk Energies"
+  description="Discover Vrosk Energies' integrated approach to environmental responsibility, occupational health and safety, and host community partnership."
+  currentPath="/sustainability"
+>
+  <!-- Header -->
+  <section class="section" style="padding-top: 60px; padding-bottom: 50px; background: #ffffff; border-bottom: 1px solid rgba(22,21,21,0.06);">
+    <div class="container">
+      <div style="max-width: 840px;">
+        <div class="badge-pill mint">
+          <span class="badge-dot"></span>
+          <span>Responsible Energy Governance</span>
+        </div>
+        <h1 class="heading-1" style="margin-bottom: 20px;">
+          Sustainability, Safety & Community Equity
+        </h1>
+        <p class="body-lead">
+          We recognize that sustainable commercial success in West Africa requires rigorous health and safety standards, proactive environmental risk governance, and genuine respect for host communities.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sustainability Framework Grid -->
+  <HSECommitment />
+
+  <!-- Detailed Framework Pillars -->
+  <section class="section" style="background: #ffffff;">
+    <div class="container">
+      <div class="bento-grid-3">
+        <!-- Pillar 1 -->
+        <div class="bento-card">
+          <div class="mono-tag" style="color: #0b4026; margin-bottom: 12px;">ISO 9001 ALIGNED</div>
+          <h2 class="heading-3" style="font-size: 1.35rem; margin-bottom: 12px;">
+            Health, Safety & Environment
+          </h2>
+          <p class="body-regular" style="font-size: 0.925rem; margin-bottom: 20px;">
+            Structured based on the UK Health & Safety Executive HS(G) guidelines and international marine safety regulations to protect personnel, contractors, and coastal ecosystems.
+          </p>
+          <a href="/health-safety-environment" class="btn btn-secondary" style="font-size: 0.875rem;">
+            Read HSE Manual & Protocols →
+          </a>
+        </div>
+
+        <!-- Pillar 2 -->
+        <div class="bento-card">
+          <div class="mono-tag" style="color: #0b4026; margin-bottom: 12px;">SOCIAL LICENSE</div>
+          <h2 class="heading-3" style="font-size: 1.35rem; margin-bottom: 12px;">
+            Community Relations & CSR
+          </h2>
+          <p class="body-regular" style="font-size: 0.925rem; margin-bottom: 20px;">
+            Treating host communities with equity, dignity, and honesty. We support vocational education, youth entrepreneurship, and local content procurement.
+          </p>
+          <a href="/community-relations-csr" class="btn btn-secondary" style="font-size: 0.875rem;">
+            Read CSR Commitments →
+          </a>
+        </div>
+
+        <!-- Pillar 3 -->
+        <div class="bento-card">
+          <div class="mono-tag" style="color: #0b4026; margin-bottom: 12px;">CARBON REDUCTION</div>
+          <h2 class="heading-3" style="font-size: 1.35rem; margin-bottom: 12px;">
+            Environmental Risk Mitigation
+          </h2>
+          <p class="body-regular" style="font-size: 0.925rem; margin-bottom: 20px;">
+            Proactive containment protocols, vapor recovery units (VRU), and prioritizing cleaner transition fuels (LPG and CNG) to displace high-carbon biomass and kerosene.
+          </p>
+          <a href="/environmental-risks" class="btn btn-secondary" style="font-size: 0.875rem;">
+            Read Environmental Policies →
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <CTABanner />
+</BaseLayout>

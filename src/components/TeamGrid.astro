@@ -1,0 +1,75 @@
+---
+import { teamMembers } from '../data/team';
+
+interface Props {
+  limit?: number;
+}
+
+const { limit = 6 } = Astro.props;
+const displayTeam = teamMembers.slice(0, limit);
+---
+
+<section class="section">
+  <div class="container">
+    <div class="section-header">
+      <div class="badge-pill mint">
+        <span class="badge-dot"></span>
+        <span>Governance & Experience</span>
+      </div>
+      <h2 class="heading-2">
+        Leadership Driving Commercial Precision
+      </h2>
+      <p class="body-lead" style="margin-top: 14px;">
+        Vrosk Energies is steered by executive commodity traders, international investment bankers, charterholders, and corporate lawyers with extensive West African market pedigree.
+      </p>
+    </div>
+
+    <!-- Outgriid Executive Grid -->
+    <div class="bento-grid-3">
+      {displayTeam.map((member) => (
+        <div class="bento-card" style="padding: 28px;">
+          <div style="width: 100%; aspect-ratio: 1/1; border-radius: var(--radius-md); overflow: hidden; margin-bottom: 22px; background: var(--bg-alt); position: relative;">
+            <img 
+              src={member.image} 
+              alt={member.name}
+              style="width: 100%; height: 100%; object-fit: cover; transition: transform var(--transition-normal);"
+              loading="lazy"
+            />
+            <div style="position: absolute; top: 12px; left: 12px;">
+              <span class="badge-pill" style="background: rgba(255,255,255,0.92); backdrop-filter: blur(8px); margin: 0; font-size: 0.7rem; border-color: rgba(0,0,0,0.06);">
+                {member.department}
+              </span>
+            </div>
+          </div>
+
+          <h3 class="heading-3" style="font-size: 1.3rem; margin-bottom: 6px;">
+            {member.name}
+          </h3>
+
+          <p style="font-family: var(--font-mono); font-size: 0.8125rem; color: #0b4026; font-weight: 600; margin-bottom: 14px;">
+            {member.role}
+          </p>
+
+          <p class="body-small" style="line-height: 1.6; margin-bottom: 22px; flex: 1;">
+            {member.summary}
+          </p>
+
+          <button 
+            type="button"
+            class="btn btn-secondary"
+            style="width: 100%; font-size: 0.875rem; padding: 10px 18px;"
+            data-team-trigger
+            data-name={member.name}
+            data-role={member.role}
+            data-dept={member.department}
+            data-img={member.image}
+            data-bio={member.fullBio}
+          >
+            Read Executive Bio
+            <span class="btn-icon-circle">→</span>
+          </button>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

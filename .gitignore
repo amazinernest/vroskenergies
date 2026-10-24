@@ -1,0 +1,25 @@
+# build output
+dist/
+.astro/
+
+# dependencies
+node_modules/
+
+# environment & logs
+.env
+.env.*
+*.log
+npm-debug.log*
+
+# system files
+.DS_Store
+Thumbs.db
+
+# audit & temp scratch files
+vrosk_home_raw.html
+outgriid_home_raw.html
+outgriid.css
+scraped_vrosk/
+scraped_outgriid/
+downloaded_assets/
+vrosk_content_dump.json

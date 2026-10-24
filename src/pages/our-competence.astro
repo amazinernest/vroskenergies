@@ -1,0 +1,129 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import CTABanner from '../components/CTABanner.astro';
+
+const competencies = [
+  {
+    number: '01',
+    title: 'Cargo Sourcing & Contract Placement',
+    summary: 'Global procurement capabilities securing refined volumes and crude stems on both competitive spot tender and multi-year term contract structures with international refiners and trading houses.',
+    tag: 'Global Origination'
+  },
+  {
+    number: '02',
+    title: 'Derivative & Paper-to-Physical Conversion',
+    summary: 'Strategic utilization of the ICE and NYMEX derivative markets, monetizing basis differentials, crack spreads, and converting paper hedges into physical delivered cargoes to optimize gross margin.',
+    tag: 'Financial Engineering'
+  },
+  {
+    number: '03',
+    title: 'Nationwide Sales & Distribution Channels',
+    summary: 'Established multi-regional distribution networks throughout Nigeria and coastal West Africa, supplying high-volume petroleum products to industrial manufacturing conglomerates and retail networks.',
+    tag: 'Downstream Distribution'
+  },
+  {
+    number: '04',
+    title: 'Access to Government & Sovereign Allocations',
+    summary: 'Accredited counterpart status with national oil companies and regulatory authorities, participating in transparent sovereign cargo allocations, DSDP frameworks, and domestic crude allocation tenders.',
+    tag: 'Sovereign Relations'
+  },
+  {
+    number: '05',
+    title: 'Strategic Trading & Cost-Optimized Delivery',
+    summary: 'Implementing proprietary quantitative algorithms and voyage scheduling models to drive down unit freight, minimize vessel laytime, and eliminate demurrage risks on every delivery.',
+    tag: 'Logistics Optimization'
+  },
+  {
+    number: '06',
+    title: 'Open Market Bulk Sales to Major Marketers',
+    summary: 'Direct wholesale distribution model supplying confirmed cargo orders to Major Oil Marketers Association of Nigeria (MOMAN) members and accredited independent petroleum marketers.',
+    tag: 'Bulk Marketer Offtake'
+  },
+  {
+    number: '07',
+    title: 'Oil Price Risk Management Products',
+    summary: 'Designing tailored OTC hedging instruments, collar options, and fixed-for-floating swap overlays to protect downstream customers from international crude and refined fuel volatility.',
+    tag: 'Price Risk Hedging'
+  },
+  {
+    number: '08',
+    title: 'Direct Access to Global Maritime Shipping',
+    summary: 'Preferred relationships with international shipowners, charter brokers, and bunker suppliers, commanding Handysize and MR2 product tankers across West African maritime corridors.',
+    tag: 'Maritime Fleet Access'
+  },
+  {
+    number: '09',
+    title: 'Marine Product Supply to IOCs',
+    summary: 'Providing compliant offshore marine fuel oil (MFO), low-sulfur marine gas oil (LSMGO), and specialized technical lubricants to International Oil Companies (IOCs) and drilling rigs.',
+    tag: 'Offshore Bunkering'
+  },
+  {
+    number: '10',
+    title: 'Structured Import Financing & Pre-Export Facilities',
+    summary: 'Arranging syndicated documentary credits, collateral management agreements (CMA), and pre-export financing facilities backed by our institutional capital market ecosystem.',
+    tag: 'Trade Finance'
+  }
+];
+---
+
+<BaseLayout
+  title="Our Competence | Vrosk Energies"
+  description="Explore the 10 core competencies and technical capabilities of Vrosk Energies in the West African oil, gas, and energy trading sector."
+  currentPath="/our-competence"
+>
+  <!-- Header -->
+  <section class="section" style="padding-top: 60px; padding-bottom: 50px; background: #ffffff; border-bottom: 1px solid rgba(22,21,21,0.06);">
+    <div class="container">
+      <div style="max-width: 840px;">
+        <div class="badge-pill mint">
+          <span class="badge-dot"></span>
+          <span>Technical & Commercial Mastery</span>
+        </div>
+        <h1 class="heading-1" style="margin-bottom: 20px;">
+          Expertise & Competence Across the Energy Value Chain
+        </h1>
+        <p class="body-lead">
+          Our operational excellence is demonstrated through ten core competencies that integrate physical supply chain execution with institutional financial engineering.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Competencies Grid -->
+  <section class="section">
+    <div class="container">
+      <div class="bento-grid-2">
+        {competencies.map((comp) => (
+          <div class="bento-card" style="background: #ffffff; justify-content: space-between;">
+            <div>
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 18px;">
+                <span class="mono-tag" style="color: #0b4026; background: rgba(77,255,176,0.15); padding: 4px 10px; border-radius: var(--radius-full);">
+                  {comp.tag}
+                </span>
+                <span style="font-family: var(--font-mono); font-size: 1.25rem; font-weight: 700; color: rgba(22,21,21,0.2);">
+                  {comp.number}
+                </span>
+              </div>
+              <h2 class="heading-3" style="font-size: 1.35rem; margin-bottom: 12px; line-height: 1.3;">
+                {comp.title}
+              </h2>
+              <p class="body-regular" style="font-size: 0.925rem; line-height: 1.6;">
+                {comp.summary}
+              </p>
+            </div>
+            <div style="padding-top: 20px; border-top: 1px solid rgba(22,21,21,0.08); margin-top: 24px; display: flex; justify-content: space-between; align-items: center;">
+              <span style="font-size: 0.8125rem; font-family: var(--font-mono); color: var(--neutral-03);">
+                PROVEN CAPABILITY
+              </span>
+              <a href="/contact-us" style="font-weight: 600; font-size: 0.875rem; color: var(--neutral-04);">
+                Inquire Desk →
+              </a>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <CTABanner />
+</BaseLayout>

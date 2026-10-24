@@ -1,0 +1,174 @@
+---
+interface Props {
+  currentPath?: string;
+}
+
+const { currentPath = '/' } = Astro.props;
+---
+
+<header class="site-header" id="siteHeader">
+  <div class="container">
+    <div class="nav-pill-wrapper">
+      <!-- Brand Logo -->
+      <a href="/" class="nav-brand" aria-label="Vrosk Energies Homepage">
+        <img 
+          src="/assets/vrosk-logo-transparent.png" 
+          alt="Vrosk Energies" 
+          class="nav-logo-img"
+          width="160"
+          height="40"
+        />
+      </a>
+
+      <!-- Desktop Navigation Menu -->
+      <nav class="nav-desktop" aria-label="Main Navigation">
+        <ul class="nav-menu">
+          <li class="nav-item">
+            <a href="/" class={`nav-link ${currentPath === '/' ? 'active' : ''}`}>
+              Home
+            </a>
+          </li>
+
+          <!-- Our Company Dropdown -->
+          <li class="nav-item has-dropdown">
+            <a href="/our-company-overview" class={`nav-link ${currentPath.includes('company') || currentPath.includes('core-values') || currentPath.includes('competence') || currentPath.includes('roadmap') || currentPath.includes('management') ? 'active' : ''}`}>
+              Our Company <span class="nav-chevron">▼</span>
+            </a>
+            <div class="nav-dropdown">
+              <a href="/our-company-overview" class="dropdown-link">Company Overview</a>
+              <a href="/our-core-values" class="dropdown-link">Our Core Values</a>
+              <a href="/our-competence" class="dropdown-link">Our Competence</a>
+              <a href="/our-roadmap" class="dropdown-link">Growth RoadMap</a>
+              <a href="/management-team" class="dropdown-link">Executive Management</a>
+            </div>
+          </li>
+
+          <!-- Business & Operations Dropdown -->
+          <li class="nav-item has-dropdown">
+            <a href="/our-business" class={`nav-link ${currentPath.includes('business') || currentPath.includes('operation') || currentPath.includes('products-services') ? 'active' : ''}`}>
+              Business & Services <span class="nav-chevron">▼</span>
+            </a>
+            <div class="nav-dropdown">
+              <a href="/our-business" class="dropdown-link">Our Business Model</a>
+              <a href="/our-operation" class="dropdown-link">Field Operations & Storage</a>
+              <a href="/our-products-services" class="dropdown-link">Products & Brokerage Services</a>
+            </div>
+          </li>
+
+          <!-- Sustainability Dropdown -->
+          <li class="nav-item has-dropdown">
+            <a href="/sustainability" class={`nav-link ${currentPath.includes('sustainability') || currentPath.includes('health-safety') || currentPath.includes('community') || currentPath.includes('environmental') ? 'active' : ''}`}>
+              Sustainability <span class="nav-chevron">▼</span>
+            </a>
+            <div class="nav-dropdown">
+              <a href="/sustainability" class="dropdown-link">Sustainability Framework</a>
+              <a href="/health-safety-environment" class="dropdown-link">Health, Safety & Environment (HSE)</a>
+              <a href="/community-relations-csr" class="dropdown-link">Community Relations & CSR</a>
+              <a href="/environmental-risks" class="dropdown-link">Environmental Governance</a>
+            </div>
+          </li>
+
+          <!-- Partners Dropdown -->
+          <li class="nav-item has-dropdown">
+            <a href="/krosk-partners-limited" class={`nav-link ${currentPath.includes('krosk') || currentPath.includes('zrosk') || currentPath.includes('trosk') ? 'active' : ''}`}>
+              Partners <span class="nav-chevron">▼</span>
+            </a>
+            <div class="nav-dropdown">
+              <a href="/krosk-partners-limited" class="dropdown-link">Krosk Partners Limited</a>
+              <a href="/zrosk" class="dropdown-link">Zrosk Investment Management</a>
+              <a href="/trosk" class="dropdown-link">Trosk Dubai Group</a>
+            </div>
+          </li>
+
+          <!-- Insights -->
+          <li class="nav-item">
+            <a href="/news-and-insights" class={`nav-link ${currentPath.includes('news') || currentPath.includes('sustainable-energy') || currentPath.includes('oil-news') || currentPath.includes('ai-in-the-oil') ? 'active' : ''}`}>
+              Insights
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+      <!-- Nav CTA & Mobile Trigger -->
+      <div class="nav-actions">
+        <a href="/contact-us" class="btn btn-primary" style="padding: 10px 22px; font-size: 0.875rem;">
+          Contact Desk
+          <span class="btn-icon-circle">→</span>
+        </a>
+        
+        <button class="mobile-nav-toggle" id="mobileNavToggle" aria-label="Toggle Navigation Menu">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Mobile Drawer -->
+  <div class="mobile-nav-drawer" id="mobileDrawer">
+    <div class="mobile-drawer-header">
+      <a href="/" class="nav-brand">
+        <img src="/assets/vrosk-logo-transparent.png" alt="Vrosk Energies" style="height: 34px; width: auto;" />
+      </a>
+      <button class="mobile-nav-toggle" id="mobileDrawerClose" aria-label="Close Menu">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+    </div>
+
+    <ul class="mobile-drawer-links">
+      <li><a href="/" class="mobile-drawer-link">Home</a></li>
+      <li>
+        <a href="/our-company-overview" class="mobile-drawer-link">Our Company</a>
+        <ul class="mobile-sublinks">
+          <li><a href="/our-company-overview" class="mobile-sublink">Company Overview</a></li>
+          <li><a href="/our-core-values" class="mobile-sublink">Core Values</a></li>
+          <li><a href="/our-competence" class="mobile-sublink">Our Competence</a></li>
+          <li><a href="/our-roadmap" class="mobile-sublink">Growth RoadMap</a></li>
+          <li><a href="/management-team" class="mobile-sublink">Management Team</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="/our-products-services" class="mobile-drawer-link">Operations & Products</a>
+        <ul class="mobile-sublinks">
+          <li><a href="/our-business" class="mobile-sublink">Our Business</a></li>
+          <li><a href="/our-operation" class="mobile-sublink">Our Operations</a></li>
+          <li><a href="/our-products-services" class="mobile-sublink">Products & Services</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="/sustainability" class="mobile-drawer-link">Sustainability</a>
+        <ul class="mobile-sublinks">
+          <li><a href="/sustainability" class="mobile-sublink">Overview</a></li>
+          <li><a href="/health-safety-environment" class="mobile-sublink">Health, Safety & Environment</a></li>
+          <li><a href="/community-relations-csr" class="mobile-sublink">Community Relations & CSR</a></li>
+          <li><a href="/environmental-risks" class="mobile-sublink">Environmental Risks</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="/krosk-partners-limited" class="mobile-drawer-link">Partners</a>
+        <ul class="mobile-sublinks">
+          <li><a href="/krosk-partners-limited" class="mobile-sublink">Krosk Partners Limited</a></li>
+          <li><a href="/zrosk" class="mobile-sublink">Zrosk Investment Management</a></li>
+          <li><a href="/trosk" class="mobile-sublink">Trosk</a></li>
+        </ul>
+      </li>
+      <li><a href="/news-and-insights" class="mobile-drawer-link">News & Insights</a></li>
+      <li><a href="/contact-us" class="mobile-drawer-link">Contact Us</a></li>
+    </ul>
+
+    <div style="margin-top: auto; padding-top: 24px; border-top: 1px solid rgba(22,21,21,0.08);">
+      <a href="/contact-us" class="btn btn-primary" style="width: 100%;">
+        Get In Touch
+      </a>
+      <p style="font-size: 0.8125rem; color: var(--neutral-03); margin-top: 16px; text-align: center;">
+        Lekki Phase 1, Lagos, Nigeria • info@vroskenergies.com
+      </p>
+    </div>
+  </div>
+</header>

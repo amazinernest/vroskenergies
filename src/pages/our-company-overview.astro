@@ -1,0 +1,132 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import CTABanner from '../components/CTABanner.astro';
+---
+
+<BaseLayout
+  title="Our Company Overview | Vrosk Energies"
+  description="Discover Vrosk Energies—a Pan-African energy leader leveraging advanced technology, regional West African knowledge, and strategic capital partnerships."
+  currentPath="/our-company-overview"
+>
+  <!-- Page Header -->
+  <section class="section" style="padding-top: 60px; padding-bottom: 50px; background: #ffffff; border-bottom: 1px solid rgba(22,21,21,0.06);">
+    <div class="container">
+      <div style="max-width: 840px;">
+        <div class="badge-pill mint">
+          <span class="badge-dot"></span>
+          <span>Corporate Overview & Heritage</span>
+        </div>
+        <h1 class="heading-1" style="margin-bottom: 20px;">
+          Pioneering Innovative & Dependable Energy Solutions in Africa
+        </h1>
+        <p class="body-lead">
+          Our understanding of the Energy sector and its core business drivers allows us to leverage new technology, deep regional knowledge, institutional capital, and strategic partnerships to deliver transformative solutions to our clients.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Vision & Mission Bento Cards -->
+  <section class="section">
+    <div class="container">
+      <div class="bento-grid-2" style="margin-bottom: 48px;">
+        <!-- Vision Bento Card -->
+        <div class="bento-card" style="background: #ffffff; justify-content: space-between; border-color: rgba(77,255,176,0.3);">
+          <div>
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+              <span class="mono-tag" style="color: #0b4026; background: rgba(77,255,176,0.18); padding: 4px 12px; border-radius: var(--radius-full);">
+                Our North Star
+              </span>
+              <span style="font-size: 1.5rem;">🔭</span>
+            </div>
+            <h2 class="heading-2" style="font-size: 2rem; margin-bottom: 16px;">Our Vision</h2>
+            <p class="body-lead" style="font-size: 1.15rem; color: var(--neutral-04); font-weight: 400; line-height: 1.6;">
+              "Being recognized as one of the leading pioneers for innovative and forward-thinking energy solutions in Africa."
+            </p>
+          </div>
+          <div style="padding-top: 24px; border-top: 1px solid rgba(22,21,21,0.08); margin-top: 24px;">
+            <p class="body-small">
+              Committed to establishing self-sustaining African energy independence while accelerating clean fuel adoption.
+            </p>
+          </div>
+        </div>
+
+        <!-- Mission Bento Card -->
+        <div class="bento-card-dark" style="background: var(--dark-surface-01); justify-content: space-between;">
+          <div>
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+              <span class="mono-tag" style="color: var(--theme-color-01); background: rgba(255,255,255,0.08); padding: 4px 12px; border-radius: var(--radius-full);">
+                Our Mandate
+              </span>
+              <span style="font-size: 1.5rem;">⚙️</span>
+            </div>
+            <h2 class="heading-2" style="font-size: 2rem; color: #ffffff; margin-bottom: 16px;">Our Mission</h2>
+            <p style="color: #e6e3e3; font-size: 1.15rem; line-height: 1.6;">
+              "Committed to delivering reliable, dependable and creative energy solutions by leveraging on technology, our global network, and innovative thinking for maximum delivery to our clients."
+            </p>
+          </div>
+          <div style="padding-top: 24px; border-top: 1px solid rgba(255,255,255,0.1); margin-top: 24px;">
+            <p style="font-size: 0.875rem; color: var(--dark-text-muted);">
+              Executing physical downstream procurement, risk structuring, and clean gas distribution with zero compromise.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Narrative Section with Bento Visuals -->
+      <div class="bento-hero-grid">
+        <div class="bento-card" style="background: #ffffff; justify-content: space-between;">
+          <div>
+            <div class="badge-pill">Founding Story & Pan-African Strategy</div>
+            <h3 class="heading-3" style="font-size: 1.65rem; margin-bottom: 16px;">
+              From Investment Backing to Direct Energy Asset Ownership
+            </h3>
+            <p class="body-regular" style="margin-bottom: 16px;">
+              Vrosk Energies was created as a strategic realization of parent group Trosk’s vision. While Trosk built an international investment portfolio valued at well over $200M across oil & gas, commodities, and manufacturing, market dynamics highlighted the urgent necessity for direct, on-the-ground operational leadership in West Africa.
+            </p>
+            <p class="body-regular" style="margin-bottom: 16px;">
+              Rather than maintaining passive exposure, Vrosk was established to directly operate along the energy value chain: importing white and heavy refined fuels, executing maritime ship-to-ship (STS) lightering, commercializing LPG and CNG, and building terminal storage assets.
+            </p>
+            <p class="body-regular" style="margin-bottom: 24px;">
+              Today, operating from our trading headquarters in Lekki Phase 1, Lagos, Vrosk works alongside institutional sister companies Krosk Partners Limited (inter-dealer broker) and Zrosk Investment Management (SEC-licensed fund manager) to offer clients unmatched commercial execution and financial risk structuring.
+            </p>
+          </div>
+          <div style="display: flex; gap: 14px; flex-wrap: wrap;">
+            <a href="/our-core-values" class="btn btn-primary">
+              Our V-R-O-S-K Core Values
+              <span class="btn-icon-circle">→</span>
+            </a>
+            <a href="/management-team" class="btn btn-secondary">
+              Meet Executive Leadership
+            </a>
+          </div>
+        </div>
+
+        <div style="display: flex; flex-direction: column; gap: 24px;">
+          <!-- Visual Frame -->
+          <div style="border-radius: var(--radius-lg); overflow: hidden; height: 260px; background: var(--bg-alt); border: 1px solid rgba(22,21,21,0.08);">
+            <img 
+              src="/assets/engineer-blueprint.webp" 
+              alt="Vrosk Engineers and Field Specialists" 
+              style="width: 100%; height: 100%; object-fit: cover;" 
+            />
+          </div>
+
+          <!-- Fast Facts Card -->
+          <div class="bento-card-dark" style="background: var(--dark-surface-01);">
+            <div class="mono-tag" style="color: var(--theme-color-01); margin-bottom: 12px;">KEY ADVANTAGE</div>
+            <h4 class="heading-4" style="color: #ffffff; margin-bottom: 8px;">
+              "We create sustainable energy solutions and reduce dependence on foreign oil."
+            </h4>
+            <p style="font-size: 0.875rem; color: var(--dark-text-muted); line-height: 1.6;">
+              By combining physical trading with domestic gas commercialization, we enhance national energy resilience while supporting the African de-carbonization roadmap.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Banner -->
+  <CTABanner />
+</BaseLayout>
